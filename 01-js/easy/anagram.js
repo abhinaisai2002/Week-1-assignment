@@ -7,8 +7,25 @@
   - `npm run test-anagram`
 */
 
+function getObj(s,obj,mul){
+    for(let ch of s){
+        if(ch in obj){
+            obj[ch]+=mul;
+        }
+        else
+            obj[ch] = 1;
+    }
+    return obj;
+}
 function isAnagram(str1, str2) {
+ let obj = {}
+    getObj(s,obj,1);
+    getObj(t,obj,-1);
 
+    for(let key in obj){
+        if(obj[key]>0)return false;
+    }
+    return true;
 }
 
 module.exports = isAnagram;
