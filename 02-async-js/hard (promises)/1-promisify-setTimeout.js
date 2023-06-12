@@ -3,4 +3,16 @@
 */
 
 function wait(n) {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, n * 1000);
+    })
+
 }
+
+function printHello() {
+    console.log("hello")
+}
+
+wait(2).then(printHello);
+

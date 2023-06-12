@@ -5,4 +5,13 @@
 
 function sleep (seconds) {
 
+    let d = Date.now();
+    while (true) {
+        let D = Date.now();
+
+        if ((D - d) >= seconds * 1000) break;
+    }
 }
+
+sleep(4)
+console.log('hello')
