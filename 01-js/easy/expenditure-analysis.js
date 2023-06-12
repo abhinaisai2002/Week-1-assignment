@@ -20,7 +20,7 @@ function calculateTotalSpentByCategory(transactions) {
   },{})
   let ans = [];
   for(let key in data){
-    ans.push({[key]:data[key]});
+    ans.push({category:key,totalSpent:data[key]});
   }
   return ans;
 }

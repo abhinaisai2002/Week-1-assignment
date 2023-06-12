@@ -7,12 +7,21 @@
 */
 
 function isPalindrome(str) {
-  let left = 0,right = str.length-1;
   str = str.toLowerCase();
-  while(left<right){
-    if(s[left] !== s[right])return false;
+  let s1 = "";
+  for(let i=0;i<str.length;i++){
+    let ch = str[i];
+    if(ch !== '' && (+ch || (/[a-zA-Z]/).test(ch)))
+    s1 = s1 + ch;
+  }
+  console.log(s1);
+  let left = 0,right = s1.length-1;
+  while (left < right) {
+    if(s1[left++] !== s1[right--])return false;
   }
   return true;
 }
+
+
 
 module.exports = isPalindrome;

@@ -18,9 +18,11 @@ function getObj(s,obj,mul){
     return obj;
 }
 function isAnagram(str1, str2) {
- let obj = {}
-    getObj(s,obj,1);
-    getObj(t,obj,-1);
+    let obj = {};
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    getObj(str1, obj, 1);
+    getObj(str2,obj,-1);
 
     for(let key in obj){
         if(obj[key]>0)return false;

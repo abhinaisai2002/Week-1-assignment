@@ -13,7 +13,6 @@
 
 class Todo {
   constructor() {
-    super();
     this.todos = [];
   }
   add(todo) {
@@ -21,15 +20,16 @@ class Todo {
   }
   remove(index) {
     if(index >=0 && index<this.todos.length)
-    this.todos.splice(index, 1);
+      this.todos.splice(index, 1);
   }
   update(index, todo) {
     if(index >=0 && index<this.todos.length)
-    this.todos[index] = todo;
+      this.todos[index] = todo;
   }
   get(index) {
     if(index >=0 && index<this.todos.length)
-    return this.todos[index];
+      return this.todos[index];
+    return null;
   }
   getAll() {
     return this.todos;
