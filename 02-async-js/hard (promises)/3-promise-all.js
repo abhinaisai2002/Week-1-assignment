@@ -5,18 +5,31 @@
  */
 
 
-function waitOneSecond() {
+function wait(n) {
 
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve(n), n * 1000);
+    })
+
+}
+
+function waitOneSecond() {
+    return wait(1);
 }
 
 function waitTwoSecond() {
-
+    return wait(2);
 }
 
 function waitThreeSecond() {
-
+    return wait(3);
 }
 
-function calculateTime() {
-
-}
+(function calculateTime() {
+    console.time();
+    let promises = [waitOneSecond(), waitTwoSecond(), waitThreeSecond()];
+    Promise.all(promises).then(res => {
+        console.log(res);
+        console.timeEnd();
+    })
+})()
