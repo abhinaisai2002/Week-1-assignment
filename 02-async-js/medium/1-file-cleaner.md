@@ -11,3 +11,25 @@ After the program runs, the output should be
 ```
 hello world my name is raman
 ```
+
+# Code
+
+```
+
+const fs = require('fs');
+
+fs.readFile('a.txt','utf-8',function(error,data){
+
+  const sSplited = data.split(/ +/);
+
+  const originalData = sSplited.join(" ");
+
+  fs.writeFile('a.txt',originalData,'utf-8',function(err){
+
+    if(err)throw err;
+
+  })
+
+})
+
+```
